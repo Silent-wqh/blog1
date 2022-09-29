@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}文章详情{% endblock title %}
+
+{% block content %}
+
+    <div class="p-5">
+    <h2>{{ article.title }}</h2>
+    <br/>
+    <div>发表时间：{{ article.create_time }}</div>
+    <div>更新时间：{{ article.update_time }}</div>
+    <br/>
+    <div style="white-space: pre-wrap">{{ article.content }}</div>
+    </div>
+
+{% endblock %}

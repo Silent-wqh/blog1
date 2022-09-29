@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+文章列表
+{% endblock %}
+
+{% block content %}
+
+    <div class="p-5">
+        {% for article in articles %}
+                <a href="{% url 'article:article_detail' article.id %}">
+                    <h4>{{ article.title }}</h4>
+                </a>
+                <br/>
+                <div>发表时间：{{ article.create_time }}</div>
+                <div>更新时间：{{ article.update_time }}</div>
+                <br/>
+                <p class="text">{{ article.content|slice:'100' }}</p>
+                <br/>
+                <hr/>
+                <br/>
+        {% endfor %}
+    <h1>胡哥牛逼!!!!!</h1>
+    </div>
+
+{% endblock %}
